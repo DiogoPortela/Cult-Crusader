@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Utils.Audio;
 
 public class ThrowableObject : MonoBehaviour
 {
     public TypeOfFaith typeOfFaith;
+    public Sprite spriteObject;
     private Vector3 direction;
     private float speed;
     private int poolArrayIndex;
@@ -37,10 +39,16 @@ public class ThrowableObject : MonoBehaviour
             if (believer.faith == typeOfFaith)
             {
                 Debug.Log("bitch went to heaven.");
+                believer.Die(false);
+                AudioManager.Instance.Play("Ascension");
+                ScoreManager.Instance.Score++;
             }
             else
             {
                 Debug.Log("bitch went to hell.");
+                AudioManager.Instance.PlayRandomSoundFromGroup("death");
+                believer.Die(true);
+                ScoreManager.Instance.Score--;
             }
             Player.Instance.throwableController.GiveObjectBack(this, poolArrayIndex);
             StopAllCoroutines();

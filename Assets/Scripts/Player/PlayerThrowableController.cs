@@ -8,6 +8,7 @@ public class PlayerThrowableController : MonoBehaviour
 {
     public float throwableSpeed = 10.0f;
     public int numberOfObjectsToWarmUp = 5;
+    public AudioSource throwSound;
     public ThrowableObject[] throawbleObjectsTemplate;
     private ObjectPool[] poolsOfThrowableObjects;
     private int selectedThrowableObjectIndex;
@@ -28,10 +29,23 @@ public class PlayerThrowableController : MonoBehaviour
     {
         if (Input.GetKeyDown(Settings.Instance.playerThrow))
         {
+            throwSound.Play();
             var currentThrowableObject = poolsOfThrowableObjects[selectedThrowableObjectIndex].GetObject(this.transform.position);
             var currentThrowable = currentThrowableObject.GetComponent<ThrowableObject>();
             currentThrowable.Throw(arrowController.pointingArrowRef.transform.forward, throwableSpeed, selectedThrowableObjectIndex);
         }
+        if (Input.GetKeyDown(Settings.Instance.weapon1))
+            selectedThrowableObjectIndex = 0;
+        else if (Input.GetKeyDown(Settings.Instance.weapon2))
+            selectedThrowableObjectIndex = 1;
+        else if (Input.GetKeyDown(Settings.Instance.weapon3))
+            selectedThrowableObjectIndex = 2;
+        else if (Input.GetKeyDown(Settings.Instance.weapon4))
+            selectedThrowableObjectIndex = 3;
+        else if (Input.GetKeyDown(Settings.Instance.weapon5))
+            selectedThrowableObjectIndex = 4;
+        GameUI.Instance.throwableImage.sprite = throawbleObjectsTemplate[selectedThrowableObjectIndex].spriteObject;
+
     }
     public void GiveObjectBack(ThrowableObject obj, int index)
     {

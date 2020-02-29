@@ -22,6 +22,8 @@ namespace Utils.Audio
                 sound.source.volume = sound.volume;
                 sound.source.pitch = sound.pitch;
                 sound.source.loop = sound.loop;
+                if(sound.group != null)
+                    sound.source.outputAudioMixerGroup = sound.group;
             }
         }
 
@@ -38,6 +40,13 @@ namespace Utils.Audio
             if (currentSound == null)
                 return;
             currentSound.source.Stop();
+        }
+
+        public void PlayRandomSoundFromGroup(string groupTag){
+            var possibleSounds = Array.FindAll(allSounds, x => x.groupTag == groupTag);
+            int randomIndex = UnityEngine.Random.Range(0, possibleSounds.Length);
+
+            possibleSounds[randomIndex].source.Play();
         }
     }
 }

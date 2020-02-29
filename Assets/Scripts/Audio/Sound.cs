@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Audio;
 
 namespace Utils.Audio
 {
@@ -7,9 +8,11 @@ namespace Utils.Audio
     {
         public string name;
         public AudioClip clip;
-        public int volume = 1;
-        public int pitch = 1;
+        public AudioMixerGroup group;
+        public float volume = 1;
+        public float pitch = 1;
         public bool loop = false;
+        public string groupTag;
         [HideInInspector] public AudioSource source;
     }
 }

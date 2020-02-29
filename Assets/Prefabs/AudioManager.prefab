@@ -44,4 +44,67 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixerGroup: {fileID: 0}
-  allSounds: []
+  allSounds:
+  - name: Music
+    clip: {fileID: 8300000, guid: d720c41c87f12224fbf9053358001755, type: 3}
+    group: {fileID: -6700514723107071649, guid: 127e730b549af2849ac1c1f17f20aa55,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 1
+    groupTag: 
+    source: {fileID: 0}
+  - name: Death1
+    clip: {fileID: 8300000, guid: 861afd4db86f9fa4db79d4c81c8795c8, type: 3}
+    group: {fileID: -4370055767156949107, guid: 127e730b549af2849ac1c1f17f20aa55,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    groupTag: death
+    source: {fileID: 0}
+  - name: Death2
+    clip: {fileID: 8300000, guid: c65b2f46295c562478e89913fa99d5cb, type: 3}
+    group: {fileID: -4370055767156949107, guid: 127e730b549af2849ac1c1f17f20aa55,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    groupTag: death
+    source: {fileID: 0}
+  - name: Death3
+    clip: {fileID: 8300000, guid: e29819a310036274ba0c9afb101d84ee, type: 3}
+    group: {fileID: -4370055767156949107, guid: 127e730b549af2849ac1c1f17f20aa55,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    groupTag: death
+    source: {fileID: 0}
+  - name: Start
+    clip: {fileID: 8300000, guid: aee9d2e005660414dba82631cbb9e96e, type: 3}
+    group: {fileID: -4370055767156949107, guid: 127e730b549af2849ac1c1f17f20aa55,
+      type: 2}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    groupTag: 
+    source: {fileID: 0}
+  - name: End
+    clip: {fileID: 8300000, guid: b065eb1554ad0fa4fbbeaf131df22df1, type: 3}
+    group: {fileID: -4370055767156949107, guid: 127e730b549af2849ac1c1f17f20aa55,
+      type: 2}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    groupTag: 
+    source: {fileID: 0}
+  - name: Ascension
+    clip: {fileID: 8300000, guid: 2836c6e2967a37243a809df8ddbcb416, type: 3}
+    group: {fileID: -4370055767156949107, guid: 127e730b549af2849ac1c1f17f20aa55,
+      type: 2}
+    volume: 0.4
+    pitch: 1
+    loop: 0
+    groupTag: 
+    source: {fileID: 0}

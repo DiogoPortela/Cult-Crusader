@@ -24,8 +24,7 @@ public class PlayerThrowableController : MonoBehaviour
         arrowController = GetComponent<PlayerArrowController>();
     }
 
-
-    private void FixedUpdate()
+    private void Update()
     {
         if (Input.GetKeyDown(Settings.Instance.playerThrow))
         {
@@ -34,8 +33,18 @@ public class PlayerThrowableController : MonoBehaviour
             currentThrowable.Throw(arrowController.pointingArrowRef.transform.forward, throwableSpeed, selectedThrowableObjectIndex);
         }
     }
-
-    public void GiveObjectBack(ThrowableObject obj, int index){
+    public void GiveObjectBack(ThrowableObject obj, int index)
+    {
         poolsOfThrowableObjects[index].GiveObject(obj.gameObject);
+    }
+    public void SetThrowableIndex(int index)
+    {
+        if (index > 0 && index < throawbleObjectsTemplate.Length)
+            selectedThrowableObjectIndex = index;
+    }
+    public void IncrementThrowableIndex(int incrementValue)
+    {
+        int index = selectedThrowableObjectIndex + incrementValue;
+        selectedThrowableObjectIndex = index % throawbleObjectsTemplate.Length;
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Utils;
 using Utils.Audio;
 
@@ -32,7 +33,19 @@ public class GameManager : SingletonBehaviour<GameManager>
                 Player.Instance.arrowController.enabled = false;
                 AudioManager.Instance.Play("End");
                 isRunning = false;
+                //StartCoroutine(End());
+                GameUI.Instance.End();
+                
+            }
+
+            if(Input.GetKeyDown(KeyCode.Escape)){
+                GameUI.Instance.escape.gameObject.SetActive(true); 
             }
         }
+    }
+
+    private IEnumerator End(){
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(0);
     }
 }

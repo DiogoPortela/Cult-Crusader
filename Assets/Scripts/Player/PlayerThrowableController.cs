@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Utils;
+using Utils.Audio;
 
 public class PlayerThrowableController : MonoBehaviour
 {
@@ -44,8 +45,11 @@ public class PlayerThrowableController : MonoBehaviour
             selectedThrowableObjectIndex = 3;
         else if (Input.GetKeyDown(Settings.Instance.weapon5))
             selectedThrowableObjectIndex = 4;
-        GameUI.Instance.throwableImage.sprite = throawbleObjectsTemplate[selectedThrowableObjectIndex].spriteObject;
+        float wheel = Input.GetAxis("Mouse ScrollWheel");
+        if (wheel != 0)
+            IncrementThrowableIndex((int)wheel);
 
+        GameUI.Instance.throwableImage.sprite = throawbleObjectsTemplate[selectedThrowableObjectIndex].spriteObject;
     }
     public void GiveObjectBack(ThrowableObject obj, int index)
     {
@@ -58,7 +62,12 @@ public class PlayerThrowableController : MonoBehaviour
     }
     public void IncrementThrowableIndex(int incrementValue)
     {
+        AudioManager.Instance.Play("WeaponSwitch");
         int index = selectedThrowableObjectIndex + incrementValue;
-        selectedThrowableObjectIndex = index % throawbleObjectsTemplate.Length;
+        if (index > 0)
+            selectedThrowableObjectIndex = index % throawbleObjectsTemplate.Length;
+        else
+            selectedThrowableObjectIndex = (throawbleObjectsTemplate.Length + index) % throawbleObjectsTemplate.Length;
+
     }
 }

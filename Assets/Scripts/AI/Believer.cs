@@ -10,10 +10,14 @@ public class Believer : MonoBehaviour
     public ParticleSystem badDeathParticleSystem;
     private NavMeshAgent navMeshAgent;
     private int index;
+    private SpriteRenderer spriteRenderer;
+    private new Rigidbody rigidbody;
 
     private void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        rigidbody = GetComponent<Rigidbody>();
         StartCoroutine(GenerateDirection());
     }
 
@@ -21,9 +25,16 @@ public class Believer : MonoBehaviour
     {
         while (true)
         {
-            Vector3 newWorldPosition = new Vector3(UnityEngine.Random.Range(-50, 50), 0, UnityEngine.Random.Range(-50, 50));
+            Vector3 newWorldPosition = new Vector3(UnityEngine.Random.Range(-100, 100), 0, UnityEngine.Random.Range(-100, 100));
             navMeshAgent.SetDestination(newWorldPosition);
             int random = UnityEngine.Random.Range(3, 10);
+
+            float direction = newWorldPosition.x - this.transform.transform.position.x;
+            if (direction > 0)
+                spriteRenderer.flipX = false;
+            else
+                spriteRenderer.flipX = true;
+
             yield return new WaitForSeconds(random);
         }
     }

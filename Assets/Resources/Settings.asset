@@ -16,4 +16,9 @@ MonoBehaviour:
   playerDown: 115
   playerLeft: 97
   playerRight: 100
-  playerThrow: 32
+  playerThrow: 323
+  weapon1: 49
+  weapon2: 50
+  weapon3: 51
+  weapon4: 52
+  weapon5: 53

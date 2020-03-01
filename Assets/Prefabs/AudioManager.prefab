@@ -99,6 +99,15 @@ MonoBehaviour:
     loop: 0
     groupTag: 
     source: {fileID: 0}
+  - name: WeaponSwitch
+    clip: {fileID: 8300000, guid: 9741748db5ef43a4d9cb7d27777ef9a3, type: 3}
+    group: {fileID: -4370055767156949107, guid: 127e730b549af2849ac1c1f17f20aa55,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    groupTag: 
+    source: {fileID: 0}
   - name: Ascension
     clip: {fileID: 8300000, guid: 2836c6e2967a37243a809df8ddbcb416, type: 3}
     group: {fileID: -4370055767156949107, guid: 127e730b549af2849ac1c1f17f20aa55,

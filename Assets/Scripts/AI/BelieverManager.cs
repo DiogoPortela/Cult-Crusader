@@ -23,7 +23,7 @@ public class BelieverManager : SingletonBehaviour<BelieverManager>
             for (int j = 0; j < numberOfInitialMobsToSpawn; j++)
             {
 
-                Vector3 randomPos = new Vector3(UnityEngine.Random.Range(-50, 50), 0, UnityEngine.Random.Range(-50, 50));
+                Vector3 randomPos = new Vector3(UnityEngine.Random.Range(-100, 100), 0, UnityEngine.Random.Range(-100, 100));
                 Believer spawn = allObjectPools[i].GetObject(randomPos).GetComponent<Believer>();
                 spawn.Init(i);
             }

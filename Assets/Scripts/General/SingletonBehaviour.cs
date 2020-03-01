@@ -28,5 +28,10 @@ namespace Utils
                 return;
             }
         }
+
+        private void OnDestroy() {
+            if(instance == this)
+            instance = null;
+        }
     }
 }

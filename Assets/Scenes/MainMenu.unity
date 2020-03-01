@@ -277,16 +277,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2099023998494177601, guid: e2acfc3c268cc984f8b10d32be50ff18,
-        type: 3}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2099023998494177601, guid: e2acfc3c268cc984f8b10d32be50ff18,
-        type: 3}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3525628045140247668, guid: e2acfc3c268cc984f8b10d32be50ff18,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -417,26 +407,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 2146596412}
-    - target: {fileID: 3928161462611192921, guid: e2acfc3c268cc984f8b10d32be50ff18,
-        type: 3}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3928161462611192921, guid: e2acfc3c268cc984f8b10d32be50ff18,
-        type: 3}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5603992051394352603, guid: e2acfc3c268cc984f8b10d32be50ff18,
-        type: 3}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5603992051394352603, guid: e2acfc3c268cc984f8b10d32be50ff18,
-        type: 3}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2acfc3c268cc984f8b10d32be50ff18, type: 3}
 --- !u!1 &2144782065
@@ -481,7 +451,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -6700514723107071649, guid: 127e730b549af2849ac1c1f17f20aa55,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: d3253a8bc5f11e2469b7140b823d2c20, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 11732db959460c6498fca080c6696178, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
